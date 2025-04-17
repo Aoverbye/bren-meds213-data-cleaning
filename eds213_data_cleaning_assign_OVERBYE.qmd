@@ -80,9 +80,10 @@ snowsurvey_fixed %>%
 
 ### Turning Water_cover into a numeric column
 
-I am deciding to turn Water_cover into a numeric column because it represents percentages out of 100.
+I am deciding to turn Water_cover into a numeric column because it represents percentages out of 100. This same logic will aply to the Land_cover column as well. 
 
 ```{r}
+# Turn Water_cover into a numeric column
 snowsurvey_fixed <- snowsurvey_fixed %>% 
   mutate(Water_cover = as.numeric(Water_cover))
 ```
@@ -101,13 +102,6 @@ snowsurvey_fixed %>%
 # Looking for values under 0
 snowsurvey_fixed %>% 
   filter(Water_cover < 0) 
-```
-
-### Saving the csv
-
-```{r}
-# Saving changes as csv
-write_csv(snowsurvey_fixed, file.path(datadir_processed, "water_cover_fixed.csv"))
 ```
 
 # Clean Land_cover
@@ -148,6 +142,7 @@ snowsurvey_fixed %>%
 ### Turning Land_cover into a numeric column
 
 ```{r}
+# Turn Land_cover into a numeric column
 snowsurvey_fixed <- snowsurvey_fixed %>% 
   mutate(Land_cover = as.numeric(Land_cover))
 ```
@@ -165,15 +160,20 @@ snowsurvey_fixed %>%
 snowsurvey_fixed %>% 
   filter(Land_cover < 0) 
 ```
+I decided to remove any negative numbers because a negative percentage does not make sense in this context. 
+
 ```{r}
 # Removing negative Land_cover values
 snowsurvey_fixed <- snowsurvey_fixed %>% 
-  mutate(Snow_cover = ifelse(Land_cover > 100, NA, Land_cover))
+  mutate(Land_cover = ifelse(Land_cover > 100, NA, Land_cover))
 ```
 
 ### Adding up the percentage points
 
+When scanning the data, I noticed some of the percentage numbers did not add up to 100%. To address this, I took any of the rows that did not add up to 100 and labeled them as NA. At first, I thought maybe I should keep rows that are under 100, but then I decided that would not be uniform, and it would not make sense to get rid of the rows with over 100 while keeping the ones with under 100. Additionally, I noticed in the metadata that it describe the Total_cover variable and notes that the total sums should always sum to 100. 
+
 ```{r}
+# Removing rows that do not add up to 100%
 snowsurvey_clean <- snowsurvey_fixed %>%
   mutate(
     Land_cover = ifelse(Land_cover + Water_cover + Snow_cover != 100, NA, Land_cover),
@@ -182,15 +182,11 @@ snowsurvey_clean <- snowsurvey_fixed %>%
   )
 ```
 
-```{r}
-# Look for any suspicious values
-snowsurvey_fixed %>% 
-  count(Snow_cover)
-```
+# Save CSV
 
 ```{r}
-# Look for any suspicious values
-snowsurvey_clean %>% 
-  count(Snow_cover)
+# Saving changes as csv
+write_csv(snowsurvey_clean, file.path(datadir_processed, "all_cover_fixed_OVERBYE.csv"))
 ```
+
 
