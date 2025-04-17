@@ -1,0 +1,196 @@
+---
+title: "eds213_data_cleaning_assign"
+author: "Amanda Overbye"
+format: html
+editor: visual
+---
+
+# EDS-213 Data Cleaning Assignment
+
+### Load libraries
+
+```{r}
+#| message: false  
+
+# Libraries
+library(tidyverse)
+```
+
+### Load data
+
+```{r}
+# file names
+
+datadir_raw <- "data/raw/"
+
+datadir_processed <- file.path("data", "processed/")
+
+species_file <- "species_presence.csv"
+
+snowsurvey_file <- "snow_cover.csv"
+
+raw_snow_survey_file <- "ASDN_Snow_survey.csv"
+```
+
+```{r}
+# Load data
+snowsurvey_csv <- read_csv(file.path(datadir_processed, snowsurvey_file))
+```
+
+```{r}
+# View dataset
+glimpse(snowsurvey_csv)
+```
+
+# Clean Water_cover
+
+```{r}
+# Look for any suspicious values
+snowsurvey_csv %>% 
+  count(Water_cover)
+```
+
+```{r}
+# Look for non-numeric values
+snowsurvey_csv %>% 
+  count(Water_cover) %>%
+  filter(is.na(as.numeric(Water_cover)))
+```
+
+### Standardizing NAs
+
+```{r}
+# Turn n/a into NA
+snowsurvey_fixed <- snowsurvey_csv %>% 
+  mutate(Water_cover = ifelse(Water_cover == "n/a", NA, Water_cover))
+```
+
+```{r}
+# Turn 'unk' (unknown) into NA
+snowsurvey_fixed <- snowsurvey_fixed %>% 
+  mutate(Water_cover = ifelse(Water_cover == "unk", NA, Water_cover))
+```
+
+```{r}
+# Check results
+snowsurvey_fixed %>% 
+  count(Water_cover) %>%
+  filter(is.na(as.numeric(Water_cover)))
+```
+
+### Turning Water_cover into a numeric column
+
+I am deciding to turn Water_cover into a numeric column because it represents percentages out of 100.
+
+```{r}
+snowsurvey_fixed <- snowsurvey_fixed %>% 
+  mutate(Water_cover = as.numeric(Water_cover))
+```
+
+### Looking for inappropriate numbers
+
+Here I am looking for numbers that do not make sense in a column of percentages
+
+```{r}
+# Looking for values over 100%
+snowsurvey_fixed %>% 
+  filter(Water_cover > 100) 
+```
+
+```{r}
+# Looking for values under 0
+snowsurvey_fixed %>% 
+  filter(Water_cover < 0) 
+```
+
+### Saving the csv
+
+```{r}
+# Saving changes as csv
+write_csv(snowsurvey_fixed, file.path(datadir_processed, "water_cover_fixed.csv"))
+```
+
+# Clean Land_cover
+
+```{r}
+# Look for any suspicious values
+snowsurvey_fixed %>% 
+  count(Land_cover)
+```
+
+
+```{r}
+# Looking for non-standardized NAs
+snowsurvey_fixed %>% 
+  count(Land_cover) %>%
+  filter(is.na(as.numeric(Land_cover)))
+```
+### Standardizing NAs
+
+```{r}
+# Turn n/a into NA
+snowsurvey_fixed <- snowsurvey_fixed %>% 
+  mutate(Land_cover = ifelse(Land_cover == "n/a", NA, Land_cover))
+```
+
+```{r}
+# Turn 'unk' (unknown) into NA
+snowsurvey_fixed <- snowsurvey_fixed %>% 
+  mutate(Land_cover = ifelse(Land_cover == "unk", NA, Land_cover))
+```
+
+```{r}
+# Checking work
+snowsurvey_fixed %>% 
+  count(Land_cover) %>%
+  filter(is.na(as.numeric(Land_cover)))
+```
+### Turning Land_cover into a numeric column
+
+```{r}
+snowsurvey_fixed <- snowsurvey_fixed %>% 
+  mutate(Land_cover = as.numeric(Land_cover))
+```
+
+### Looking for outlier numbers
+
+```{r}
+# Looking for values over 100%
+snowsurvey_fixed %>% 
+  filter(Land_cover > 100) 
+```
+
+```{r}
+# Looking for values under 0
+snowsurvey_fixed %>% 
+  filter(Land_cover < 0) 
+```
+```{r}
+# Removing negative Land_cover values
+snowsurvey_fixed <- snowsurvey_fixed %>% 
+  mutate(Snow_cover = ifelse(Land_cover > 100, NA, Land_cover))
+```
+
+### Adding up the percentage points
+
+```{r}
+snowsurvey_clean <- snowsurvey_fixed %>%
+  mutate(
+    Land_cover = ifelse(Land_cover + Water_cover + Snow_cover != 100, NA, Land_cover),
+    Water_cover = ifelse(Land_cover + Water_cover + Snow_cover != 100, NA, Water_cover),
+    Snow_cover = ifelse(Land_cover + Water_cover + Snow_cover != 100, NA, Snow_cover)
+  )
+```
+
+```{r}
+# Look for any suspicious values
+snowsurvey_fixed %>% 
+  count(Snow_cover)
+```
+
+```{r}
+# Look for any suspicious values
+snowsurvey_clean %>% 
+  count(Snow_cover)
+```
+

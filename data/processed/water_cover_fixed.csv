@@ -9221,7 +9221,7 @@ cari,2011,6-Jun-11,3b,19,2,10,88,100,"ohicks, sbrown",NA
 cari,2011,6-Jun-11,3b,2,10,5,85,100,"ohicks, sbrown",NA
 cari,2011,6-Jun-11,3b,20,45,5,50,100,"ohicks, sbrown",NA
 cari,2011,6-Jun-11,3b,21,1,15,84,100,"ohicks, sbrown",NA
-cari,2011,6-Jun-11,3b,22,NA,unk,unk,<row r=\64\ spans=\1:11\ x14ac:dyDescent=\0.2\>,"ohicks, sbrown",NA
+cari,2011,6-Jun-11,3b,22,NA,NA,unk,NA,"ohicks, sbrown",NA
 cari,2011,6-Jun-11,3b,23,0,15,85,100,"ohicks, sbrown",NA
 cari,2011,6-Jun-11,3b,24,30,5,65,100,"ohicks, sbrown",NA
 cari,2011,6-Jun-11,3b,25,4,30,66,100,"ohicks, sbrown",NA
@@ -19721,26 +19721,26 @@ nome,2011,7-Feb-11,west,11SN01,0,5,95,100,ekwon,NA
 nome,2011,7-Feb-11,west,11SN02,0,80,20,100,ekwon,NA
 nome,2011,7-Feb-11,west,11SN03,0,20,80,100,ekwon,NA
 nome,2011,7-Feb-11,west,11SN04,0,5,95,100,ekwon,NA
-nome,2011,20-May-11,central,11SN11,25,n/a,n/a,25,eescajeda,NA
-nome,2011,20-May-11,east,11SN12,15,n/a,n/a,15,eescajeda,NA
-nome,2011,20-May-11,east,11SN13,40,n/a,n/a,40,eescajeda,NA
-nome,2011,20-May-11,east,11SN14,40,n/a,n/a,40,eescajeda,NA
-nome,2011,20-May-11,east,11SN15,30,n/a,n/a,30,eescajeda,NA
-nome,2011,20-May-11,east,11SN16,50,n/a,n/a,50,eescajeda,NA
-nome,2011,20-May-11,east,11SN17,50,n/a,n/a,50,eescajeda,NA
-nome,2011,20-May-11,east,11SN18,NA,n/a,n/a,n/a,eescajeda,NA
-nome,2011,20-May-11,east,11SN19,NA,n/a,n/a,n/a,eescajeda,NA
-nome,2011,20-May-11,east,11SN20,NA,n/a,n/a,n/a,eescajeda,NA
-nome,2011,20-May-11,central,11SN05,10,n/a,n/a,10,ekwon,NA
-nome,2011,20-May-11,central,11SN06,10,n/a,n/a,10,ekwon,NA
-nome,2011,20-May-11,central,11SN07,10,n/a,n/a,10,ekwon,NA
-nome,2011,20-May-11,central,11SN08,15,n/a,n/a,15,ekwon,NA
-nome,2011,20-May-11,central,11SN09,20,n/a,n/a,20,ekwon,NA
-nome,2011,20-May-11,central,11SN10,35,n/a,n/a,35,ekwon,NA
-nome,2011,20-May-11,west,11SN01,5,n/a,n/a,5,ekwon,NA
-nome,2011,20-May-11,west,11SN02,5,n/a,n/a,5,ekwon,NA
-nome,2011,20-May-11,west,11SN03,10,n/a,n/a,10,ekwon,NA
-nome,2011,20-May-11,west,11SN04,5,n/a,n/a,5,ekwon,NA
+nome,2011,20-May-11,central,11SN11,25,NA,n/a,25,eescajeda,NA
+nome,2011,20-May-11,east,11SN12,15,NA,n/a,15,eescajeda,NA
+nome,2011,20-May-11,east,11SN13,40,NA,n/a,40,eescajeda,NA
+nome,2011,20-May-11,east,11SN14,40,NA,n/a,40,eescajeda,NA
+nome,2011,20-May-11,east,11SN15,30,NA,n/a,30,eescajeda,NA
+nome,2011,20-May-11,east,11SN16,50,NA,n/a,50,eescajeda,NA
+nome,2011,20-May-11,east,11SN17,50,NA,n/a,50,eescajeda,NA
+nome,2011,20-May-11,east,11SN18,NA,NA,n/a,NA,eescajeda,NA
+nome,2011,20-May-11,east,11SN19,NA,NA,n/a,NA,eescajeda,NA
+nome,2011,20-May-11,east,11SN20,NA,NA,n/a,NA,eescajeda,NA
+nome,2011,20-May-11,central,11SN05,10,NA,n/a,10,ekwon,NA
+nome,2011,20-May-11,central,11SN06,10,NA,n/a,10,ekwon,NA
+nome,2011,20-May-11,central,11SN07,10,NA,n/a,10,ekwon,NA
+nome,2011,20-May-11,central,11SN08,15,NA,n/a,15,ekwon,NA
+nome,2011,20-May-11,central,11SN09,20,NA,n/a,20,ekwon,NA
+nome,2011,20-May-11,central,11SN10,35,NA,n/a,35,ekwon,NA
+nome,2011,20-May-11,west,11SN01,5,NA,n/a,5,ekwon,NA
+nome,2011,20-May-11,west,11SN02,5,NA,n/a,5,ekwon,NA
+nome,2011,20-May-11,west,11SN03,10,NA,n/a,10,ekwon,NA
+nome,2011,20-May-11,west,11SN04,5,NA,n/a,5,ekwon,NA
 nome,2011,22-May-11,central,11SN11,10,50,40,100,eescajeda,NA
 nome,2011,22-May-11,east,11SN12,10,60,30,100,eescajeda,NA
 nome,2011,22-May-11,east,11SN13,20,20,60,100,eescajeda,NA
@@ -19748,19 +19748,19 @@ nome,2011,22-May-11,east,11SN14,25,5,70,100,eescajeda,NA
 nome,2011,22-May-11,east,11SN15,40,10,50,100,eescajeda,NA
 nome,2011,22-May-11,east,11SN16,50,30,20,100,eescajeda,NA
 nome,2011,22-May-11,east,11SN17,30,10,60,100,eescajeda,NA
-nome,2011,22-May-11,east,11SN18,40,n/a,n/a,40,eescajeda,NA
-nome,2011,22-May-11,east,11SN19,60,n/a,n/a,60,eescajeda,NA
+nome,2011,22-May-11,east,11SN18,40,NA,n/a,40,eescajeda,NA
+nome,2011,22-May-11,east,11SN19,60,NA,n/a,60,eescajeda,NA
 nome,2011,22-May-11,east,11SN20,80,10,10,100,eescajeda,NA
-nome,2011,22-May-11,central,11SN05,0,n/a,n/a,0,tesson,NA
-nome,2011,22-May-11,central,11SN06,0,n/a,n/a,0,tesson,NA
-nome,2011,22-May-11,central,11SN07,15,n/a,n/a,15,tesson,NA
-nome,2011,22-May-11,central,11SN08,15,n/a,n/a,15,tesson,NA
-nome,2011,22-May-11,central,11SN09,5,n/a,n/a,5,tesson,NA
-nome,2011,22-May-11,central,11SN10,15,n/a,n/a,15,tesson,NA
-nome,2011,22-May-11,west,11SN01,0,n/a,n/a,0,tesson,NA
-nome,2011,22-May-11,west,11SN02,1,n/a,n/a,1,tesson,NA
-nome,2011,22-May-11,west,11SN03,5,n/a,n/a,5,tesson,NA
-nome,2011,22-May-11,west,11SN04,10,n/a,n/a,10,tesson,NA
+nome,2011,22-May-11,central,11SN05,0,NA,n/a,0,tesson,NA
+nome,2011,22-May-11,central,11SN06,0,NA,n/a,0,tesson,NA
+nome,2011,22-May-11,central,11SN07,15,NA,n/a,15,tesson,NA
+nome,2011,22-May-11,central,11SN08,15,NA,n/a,15,tesson,NA
+nome,2011,22-May-11,central,11SN09,5,NA,n/a,5,tesson,NA
+nome,2011,22-May-11,central,11SN10,15,NA,n/a,15,tesson,NA
+nome,2011,22-May-11,west,11SN01,0,NA,n/a,0,tesson,NA
+nome,2011,22-May-11,west,11SN02,1,NA,n/a,1,tesson,NA
+nome,2011,22-May-11,west,11SN03,5,NA,n/a,5,tesson,NA
+nome,2011,22-May-11,west,11SN04,10,NA,n/a,10,tesson,NA
 nome,2011,25-May-11,central,11SN05,0,60,40,100,bksandercock,NA
 nome,2011,25-May-11,central,11SN06,0,60,40,100,bksandercock,NA
 nome,2011,25-May-11,central,11SN07,5,35,60,100,bksandercock,NA
